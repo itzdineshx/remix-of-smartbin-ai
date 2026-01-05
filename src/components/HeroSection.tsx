@@ -18,21 +18,52 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="section-container relative z-10">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">IoT & Smart Cities Track</span>
+        <div className="max-w-4xl">
+          {/* Track & Team Info */}
+          <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-medium text-primary">Track 3</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
+              <span className="text-sm font-medium text-accent-foreground">Team 13</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20">
+              <span className="text-sm font-bold text-destructive">Red Dragon</span>
+            </div>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-slide-up">
-            Smart Multimodal Waste Bin{' '}
-            <span className="gradient-text">Monitoring System</span>
+            Smart Waste{' '}
+            <span className="gradient-text">Management System</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            AI-powered waste classification, prediction, and optimized collection for sustainable cities. 
-            Transforming urban waste management through intelligent IoT solutions.
-          </p>
+          {/* Team Members */}
+          <div className="flex flex-wrap items-center gap-2 mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <span className="text-sm text-muted-foreground">Team Members:</span>
+            {['Harishwaran', 'Jayamurugan', 'Dinesh'].map((member, index) => (
+              <span key={member} className="px-3 py-1 bg-secondary rounded-full text-sm font-medium text-secondary-foreground">
+                {member}
+              </span>
+            ))}
+          </div>
+
+          {/* Problem Statement */}
+          <div className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 mb-8 animate-slide-up" style={{ animationDelay: '0.15s' }}>
+            <h2 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-destructive" />
+              Problem Statement
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Inefficient waste collection results in overflowing bins, unnecessary fuel consumption, and increased urban pollution. Static collection routes fail to adapt to real-time waste generation patterns. Studies show bins are often emptied when only <span className="text-primary font-semibold">40% full</span>, wasting resources and increasing carbon emissions.
+            </p>
+            <div className="pt-4 border-t border-border">
+              <h3 className="text-sm font-semibold text-foreground mb-2">Our Solution</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Build a smart waste management system that monitors bin fill levels using IoT sensors and recommends optimized collection routes based on real-time data, improving operational efficiency and supporting sustainable urban waste management.
+              </p>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <Button size="lg" className="gradient-primary text-primary-foreground border-0 group">
@@ -43,22 +74,6 @@ const HeroSection = () => {
               Explore Solution
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div>
-              <p className="text-3xl font-bold gradient-text">25%</p>
-              <p className="text-sm text-muted-foreground">Fewer Collection Trips</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold gradient-text">40%</p>
-              <p className="text-sm text-muted-foreground">Fuel Savings</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold gradient-text">60%</p>
-              <p className="text-sm text-muted-foreground">Better Recycling</p>
-            </div>
           </div>
         </div>
       </div>
